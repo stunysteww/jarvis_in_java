@@ -1,46 +1,29 @@
 package com.company;
+
+
 import java.awt.*;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.Scanner;
 
-public class Main {
+public class Debugjr {
     public static void main(String[] args) throws URISyntaxException, IOException {
 
-//code by Stunysteww
-//follow on instagram @stunysteww        
-        
-        
-        //securityunits
-        String UserName = "Stew";
-        String password = "123qwe";
 
         //tasks
         String task1 = "open_my_webapp";
         String task2 = "open_notepad";
+        String task3 = "open_youtube";
+        String task4 = "open_instagram";
 
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Hello this is Jarvis please fill in the details so that i can help you");
-       //login
         System.out.println("Your name:");
         String name = sc.next();
-        System.out.println("Your Username:");
-        String un = sc.next();
-        if (un.matches(UserName)) {
-            System.out.println("Password:");
-        } else {
-            System.out.println("Username Does not exist");
-        }
-        String pw = sc.next();
-        if (pw.matches(password)) {
-            System.out.println("welcome back " + name);
-            System.out.println("So, what can i do for you " + name + "?");
-        }else {
-            System.out.println("Wrong password for"+ UserName);
-        }
 
+        System.out.println("How can i help you " + name + " ?");
         String tasks = sc.next();
         if (tasks.matches(task1)) {
 
@@ -53,16 +36,20 @@ public class Main {
         } else if (tasks.matches(task2)) {
 
 
-            Runtime runtime = Runtime.getRuntime();     //getting Runtime object
-
+            Runtime runtime = Runtime.getRuntime();
             try {
-                runtime.exec("notepad.exe");        //opens new notepad instance
-
+                runtime.exec("notepad.exe");
                 //OR runtime.exec("notepad");
             } catch (IOException e) {
                 e.printStackTrace();
 
             }
+        } else if (tasks.matches(task3)) {
+            Desktop desk = Desktop.getDesktop();
+            desk.browse(new URI("https://youtube.com"));
+        } else if (tasks.matches(task4)) {
+            Desktop desk = Desktop.getDesktop();
+            desk.browse(new URI("https://instagram.com"));
         }
     }
 }
