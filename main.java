@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 public class Debugjr {
     public static void main(String[] args) throws URISyntaxException, IOException {
-
+//code author @stunysteww
+        //follow on instagram @stunysteww
 
         //tasks
         String task1 = "open_my_webapp";
